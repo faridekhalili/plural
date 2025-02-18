@@ -34,16 +34,23 @@ describe('Augmented tests', () => {
         assert.equal(plural('dwarf'), 'dwarfs')
     });
 
-    // ABANDONED, SUSPECTED EQUIVALENT.
-    // it('Sample 3', () => {
-    //     /**
-    //      * ArrayDeclaration
-    //      * index.js:3:13
-    //      * -   var rules = []
-    //      * +   var rules = [\"Stryker was here\"]
-    //      */
-    //     assert.equal(plural('Stryker was here', 0), 'Stryker was heres')
-    // });
+    // EQUIVALENT.
+    // Reason: The 'Stryker was here' rule is never applied.
+    // Whenever the rule is visited, the program enters the conditional on line 87:
+    // if (type(rule[0]) === 'String' && rule[0] === word) {
+    // rule[0] is the first letter of 'Stryker was here', so 'S'.
+    // Thus the only word that would activate this rule would be the word 'S'.
+    // However, 'S' is caught by a different rule before reaching the 'Stryker was here' rule,
+    // which is at the end of the list.
+    it('Sample 3', () => {
+        /**
+         * ArrayDeclaration
+         * index.js:3:13
+         * -   var rules = []
+         * +   var rules = [\"Stryker was here\"]
+         */
+        assert.equal(plural('S'), 'Ses')
+    });
 
     it('Sample 4', () => {
         /**
@@ -56,15 +63,15 @@ describe('Augmented tests', () => {
     });
 
     // Kills mutant but also kills original. Original code gives 's' as plural of empty string.
-    it('Sample 5', () => {
-        /**
-         * StringLiteral
-         * index.js:33:13
-         * -     if (w === 'dwarf' || w === 'roof') {
-         * +     if (w === \"\" || w === 'roof') {
-         */
-        assert.equal(plural(''), '')
-    });
+    // it('Sample 5', () => {
+    //     /**
+    //      * StringLiteral
+    //      * index.js:33:13
+    //      * -     if (w === 'dwarf' || w === 'roof') {
+    //      * +     if (w === \"\" || w === 'roof') {
+    //      */
+    //     assert.equal(plural(''), '')
+    // });
 
     it("Sample 6", () => {
         /**
