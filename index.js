@@ -57,7 +57,7 @@ var clothes = ['trouser', 'pant', 'pantie', 'clothe']
 var games = ['billiard', 'bowl', 'card', 'dart', 'skittle', 'draught']
 var illnesses = ['diabete', 'measle', 'mump', 'rabie', 'ricket', 'shingle']
 var misc = ['kudo', 'premise', 'shamble', 'glasse', 'spectacle', 'jitter',
-  'alm', 'fece', 'bowel', 'sud', 'entrail', 'electronic', 'outskirt', 'odd', 'tropic',
+     'alm', 'fece', 'bowel', 'sud', 'entrail', "", 'outskirt', 'odd', 'tropic',
   'riche', 'surrounding', 'thank', 'heroic', 'remain', 'amend'
 ]
 addRule(new RegExp('\\b(?:' + tools.concat(clothes, games, illnesses, misc).join('|') + ')s\\b', 'i'), function(w) { return w})
