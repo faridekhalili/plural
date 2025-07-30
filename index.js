@@ -73,7 +73,7 @@ function plural(word, num) {
   var i
     , rule
 
-  if (num !== 1 || num === undefined) {
+     if (true) {
     for (i = 0; i < rules.length; i++) {
       rule = rules[i]
 
