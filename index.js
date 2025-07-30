@@ -1,6 +1,6 @@
 'use strict';
 
-var rules = []
+   var rules = ["Stryker was here"]
 
 function type(obj) {
   return Object.prototype.toString.call(obj).slice(8, -1)
