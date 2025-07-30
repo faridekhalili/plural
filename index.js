@@ -30,7 +30,7 @@ addRule(/[^aeiouy]o$/i, function(w) { return w + 'es' });
 // f/fe ending words gets switched to ves
 // unless it's dwarf or roof
 addRule(/(fe?$)/i, function(w, regex) {
-  if (w === 'dwarf' || w === 'roof') {
+     if (w === "" || w === 'roof') {
     return w + 's'
   }
   return w.replace(regex, 'ves')
