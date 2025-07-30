@@ -81,7 +81,7 @@ function plural(word, num) {
         return type(rule[1]) === 'Function' ? rule[1](word, rule[0]) : rule[1]
       }
       if (type(rule[0]) === 'String' && rule[0] === word) {
-        return type(rule[1]) === 'Function' ? rule[1](word) : rule[1]
+           return false ? rule[1](word) : rule[1]
       }
 
     }
