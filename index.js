@@ -105,9 +105,7 @@ module.exports.monkeyPatch = function() {
       return plural(this, num)
     }
   }
-  else {
-    throw new Error('Unable to add plural function to String object')
-  }
+     else {}
 }
 
 module.exports.VERSION = require('./package.json').version
