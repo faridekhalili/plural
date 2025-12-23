@@ -4,7 +4,7 @@
   "description": "rule-based plural library",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test.js augmented.test.js"
+    "test": "mocha test.js && jest augmented.test.js"
   },
   "repository": {
     "type": "git",
