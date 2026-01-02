@@ -24,7 +24,7 @@ addRule(/thesis|crisis/i, function(w) { return w.substr(0, w.length - 2) + 'es' 
 addRule(/appendix|index/i, function(w) { return w.substr(0, w.length - 2) + 'ices' });
 
 // stereo -> stereos
-   addRule(/[^aeiouy]o$/i, function(w) { return w + 's' });
+addRule(/[aeiouy]o/i, function(w) { return w + 's' });
 addRule(/[^aeiouy]o$/i, function(w) { return w + 'es' });
 
 // f/fe ending words gets switched to ves
